@@ -12,10 +12,28 @@ struct ContentView: View {
         ZStack{
             Image("background").resizable()
                 .edgesIgnoringSafeArea(.all)
+            VStack{
+                Image("diceeLogo")
+                HStack{
+                    DiceView(n: 1)
+                    DiceView(n: 1)
+                }
+            }
         }
+    }
+}
+
+struct DiceView: View {
+    let n: Int
+    var body: some View {
+        Image("dice\(n)")
+            .resizable()
+            .aspectRatio(1, contentMode: .fit)
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
